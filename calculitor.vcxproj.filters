@@ -18,12 +18,12 @@
     <ClCompile Include="logic.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="interface.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header_for_kalculator.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="interface.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
