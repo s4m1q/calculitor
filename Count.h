@@ -33,7 +33,7 @@ public:
 		}
 		else if (operation == "/") {
 			if (b == 0) {
-				std::cout << "Problem" << "\n"; // надо что-то делать
+				std::cout << "Problem" << "\n"; // обработать исключение
 				return 0;
 			}
 			else {
@@ -49,8 +49,11 @@ public:
 				temp *= i;
 			}
 		}
-		else if (operation == "sqrt") {
-			return sqrt(a);
+		else if (operation == "sqrt") { // обработать исключение
+			if (a > 0) {
+				return sqrt(a);
+			}
+			//suck
 		}
 		else if (operation == "sin") {
 			return sin(a);
@@ -58,7 +61,7 @@ public:
 		else if (operation == "cos") {
 			return cos(a);
 		}
-		else if (operation == "tg") { // из-за округления cos!=0;
+		else if (operation == "tg") { // из-за округления cos!=0 
 			return tan(a);
 		}
 		else if (operation == "ctg") {
@@ -76,12 +79,15 @@ public:
 		else if (operation == "arcctg") {
 			return (1 / atan(a));
 		}
-		else if (operation == "log") { // b - основание log
-			return log10(a) / log10(b);
+		else if (operation == "log") { // b - основание log,  обработать исключение
+			if (a <= 0 || b <= 0 || b == 1) {
+				//suck
+			}
+			else {
+				return log10(a) / log10(b);
+			}
+			
 		}
-		/*else if (operation == "pow_mod") {	саня: ОНО НАДО?   
-												самир: нет
-		}*/
 	}
 
 
