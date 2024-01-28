@@ -14,8 +14,7 @@ int main()
 {
     //setlocale(LC_ALL, "RU");
     //interface_cal();
-	Calculate c("cos", 2.3, 5.9);
-	double s = c.result();
-	std::cout << s;
+	Calculate c("cos", 0.5, 5.9);
+	std::cout << c.result();
 	
 }
