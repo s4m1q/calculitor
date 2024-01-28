@@ -17,7 +17,7 @@ int main()
 
     
 
-	int type = interface_cal();
+	int type = interface_cal(); // выдаёт число, от него будет зависеть работа программы (выбор вида калькулятора)
 	
 		
 
