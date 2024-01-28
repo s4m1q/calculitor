@@ -3,9 +3,9 @@
 #include <string>
 #include <stack>
 #include <vector>
-#include "Header_for_kalculator.h"
+#include "Header_samir+sani-denisov.h"
 #include "interface.h"
-
+#include "Header_alina+sani-fedoriko.h"
 
 using namespace std;
 
