@@ -20,11 +20,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header_for_kalculator.h">
+    <ClInclude Include="Header_alina+sani-fedoriko.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="interface.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Header_samir+sani-denisov.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arial.ttf" />
   </ItemGroup>
 </Project>

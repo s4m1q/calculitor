@@ -134,8 +134,9 @@
     <ClCompile Include="logic.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header_samir+sani-denisov.h" />
     <ClInclude Include="interface.h" />
-    <ClInclude Include="Header_for_kalculator.h" />
+    <ClInclude Include="Header_alina+sani-fedoriko.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="arial.ttf" />
