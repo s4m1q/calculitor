@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -11,7 +10,6 @@ private:
 	double a, b;
 
 public:
-	Calculate();
 	Calculate(std::string operation_, double a_, double b_);
 	double result() {
 		if (operation == "+") {

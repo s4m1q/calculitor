@@ -134,6 +134,7 @@
     <ClCompile Include="logic.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Count.h" />
     <ClInclude Include="Header_samir+sani-denisov.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="Header_alina+sani-fedoriko.h" />
