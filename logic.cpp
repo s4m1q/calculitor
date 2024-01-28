@@ -12,9 +12,23 @@ using namespace std;
 
 int main()
 {
-    //setlocale(LC_ALL, "RU");
-    //interface_cal();
-	Calculate c("cos", 0.5, 5.9);
-	std::cout << c.result();
+
+    setlocale(LC_ALL, "RU");
+	string str = {};
+
+    
+
+	int type = interface_cal(); // ����� �����, �� ���� ����� �������� ������ ��������� (����� ���� ������������)
+	
+		
+
+	string operation = {};
+	float a = 0, b = 0;
+	cin >> operation;
+	cin >> a >> b;
+	Calculate c(operation, a, b); // ��� ��������������� ����������� ��� ������� �����. ����� ����� �� ��� ������ (���� � - ��� �� ������� � ������� ���)
+	double s = c.result();		// ������� ������ � ���� ���������� ��� ��������, �������� ������ � ������������� �������.
+	cout << s;
+
 	
 }
