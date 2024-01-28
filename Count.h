@@ -79,8 +79,8 @@ public:
 		else if (operation == "log") { // b - основание log
 			return log10(a) / log10(b);
 		}
-		/*else if (operation == "pow_mod") {   ОНО НАДО?
-
+		/*else if (operation == "pow_mod") {	саня: ОНО НАДО?   
+												самир: нет
 		}*/
 	}
 
