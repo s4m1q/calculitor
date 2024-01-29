@@ -7,7 +7,7 @@ int interface_cal()
 {
     setlocale(LC_ALL, "RU");
     int a = 0;
-    sf::RenderWindow window(sf::VideoMode(1100, 900), "Calculator");
+    sf::RenderWindow window(sf::VideoMode(1600, 850), "Calculator");
     window.setFramerateLimit(60);
 
     sf::Font font;
