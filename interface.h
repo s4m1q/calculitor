@@ -2,13 +2,15 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <vector>
+#include <conio.h> 
+#include <windows.h> 
 
 int interface_cal()
 {
     setlocale(LC_ALL, "RU");
     int a = 0;
     sf::RenderWindow window(sf::VideoMode(1600, 870), "Calculator");
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(13);
 
     sf::Font font;
 
@@ -29,7 +31,6 @@ int interface_cal()
     std::vector<std::string> exp6{  };
  
 
-    //string** gigachad = new string *[7];
 
 
     if (!font.loadFromFile("arial.ttf"))
@@ -37,6 +38,13 @@ int interface_cal()
         std::cout << "Failed to load font!" << std::endl;
         return -1;
     }
+
+    sf::RectangleShape rectangle(sf::Vector2f(1500.f, 40.f));
+    rectangle.setFillColor(sf::Color::Red);
+    rectangle.setPosition(20.f, 20.f);
+
+    // Отрисовка прямоугольника
+    
 
     sf::Text text0("", font, 30);
     text0.setFillColor(sf::Color::Black);
@@ -431,6 +439,7 @@ int interface_cal()
     while (window.isOpen())
     {
         sf::Event event;
+
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -440,9 +449,465 @@ int interface_cal()
         }
 
 
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f); } }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f); } }
+       
+
 
         if (count == 0)
         {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text0.setString(text0.getString() + std::to_string(1));
+                exp0.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp0.empty())
+                {
+                    text0.setString("");
+                    exp0.pop_back();
+                    for (int j = 0; j < size(exp0); j++)
+                        text0.setString(text0.getString() + exp0[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text0.setString(text0.getString() + std::to_string(2));
+                exp0.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text0.setString(text0.getString() + std::to_string(3));
+                exp0.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text0.setString(text0.getString() + std::to_string(4));
+                exp0.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text0.setString(text0.getString() + std::to_string(5));
+                exp0.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text0.setString(text0.getString() + std::to_string(6));
+                exp0.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text0.setString(text0.getString() + std::to_string(7));
+                exp0.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text0.setString(text0.getString() + std::to_string(8));
+                exp0.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text0.setString(text0.getString() + std::to_string(9));
+                exp0.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text0.setString(text0.getString() + std::to_string(0));
+                exp0.push_back(std::to_string(0));
+            }
+        }
+
+
+        else if (count == 1)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text1.setString(text1.getString() + std::to_string(1));
+                exp1.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text1.setString(text1.getString() + std::to_string(2));
+                exp1.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp1.empty())
+                {
+                    text1.setString("");
+                    exp1.pop_back();
+                    for (int j = 0; j < size(exp1); j++)
+                        text1.setString(text1.getString() + exp1[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text1.setString(text1.getString() + std::to_string(3));
+                exp1.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text1.setString(text1.getString() + std::to_string(4));
+                exp1.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text1.setString(text1.getString() + std::to_string(5));
+                exp1.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text1.setString(text1.getString() + std::to_string(6));
+                exp1.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text1.setString(text1.getString() + std::to_string(7));
+                exp1.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text1.setString(text1.getString() + std::to_string(8));
+                exp1.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text1.setString(text1.getString() + std::to_string(9));
+                exp1.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text1.setString(text1.getString() + std::to_string(0));
+                exp1.push_back(std::to_string(0));
+            }
+        }
+        
+        else if (count == 2)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text2.setString(text2.getString() + std::to_string(1));
+                exp2.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp2.empty())
+                {
+                    text2.setString("");
+                    exp2.pop_back();
+                    for (int j = 0; j < size(exp2); j++)
+                        text2.setString(text2.getString() + exp2[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text2.setString(text2.getString() + std::to_string(2));
+                exp2.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text2.setString(text2.getString() + std::to_string(3));
+                exp2.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text2.setString(text2.getString() + std::to_string(4));
+                exp2.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text2.setString(text2.getString() + std::to_string(5));
+                exp2.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text2.setString(text2.getString() + std::to_string(6));
+                exp2.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text2.setString(text2.getString() + std::to_string(7));
+                exp2.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text2.setString(text2.getString() + std::to_string(8));
+                exp2.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text2.setString(text2.getString() + std::to_string(9));
+                exp2.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text2.setString(text2.getString() + std::to_string(0));
+                exp2.push_back(std::to_string(0));
+            }
+        }
+
+        else if (count == 3)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text3.setString(text3.getString() + std::to_string(1));
+                exp3.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp3.empty())
+                {
+                    text3.setString("");
+                    exp3.pop_back();
+                    for (int j = 0; j < size(exp3); j++)
+                        text3.setString(text3.getString() + exp3[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text3.setString(text3.getString() + std::to_string(2));
+                exp3.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text3.setString(text3.getString() + std::to_string(3));
+                exp3.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text3.setString(text3.getString() + std::to_string(4));
+                exp3.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text3.setString(text3.getString() + std::to_string(5));
+                exp3.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text3.setString(text3.getString() + std::to_string(6));
+                exp3.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text3.setString(text3.getString() + std::to_string(7));
+                exp3.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text3.setString(text3.getString() + std::to_string(8));
+                exp3.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text3.setString(text3.getString() + std::to_string(9));
+                exp3.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text3.setString(text3.getString() + std::to_string(0));
+                exp3.push_back(std::to_string(0));
+            }
+        }
+
+        else if (count == 4)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text4.setString(text4.getString() + std::to_string(1));
+                exp4.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text4.setString(text4.getString() + std::to_string(2));
+                exp4.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp4.empty())
+                {
+                    text4.setString("");
+                    exp4.pop_back();
+                    for (int j = 0; j < size(exp4); j++)
+                        text4.setString(text4.getString() + exp4[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text4.setString(text4.getString() + std::to_string(3));
+                exp4.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text4.setString(text4.getString() + std::to_string(4));
+                exp4.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text4.setString(text4.getString() + std::to_string(5));
+                exp4.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text4.setString(text4.getString() + std::to_string(6));
+                exp4.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text4.setString(text4.getString() + std::to_string(7));
+                exp4.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text4.setString(text4.getString() + std::to_string(8));
+                exp4.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text4.setString(text4.getString() + std::to_string(9));
+                exp4.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text4.setString(text4.getString() + std::to_string(0));
+                exp4.push_back(std::to_string(0));
+            }
+        }
+
+        else if (count == 5)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text5.setString(text5.getString() + std::to_string(1));
+                exp5.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text5.setString(text5.getString() + std::to_string(2));
+                exp5.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp5.empty())
+                {
+                    text5.setString("");
+                    exp5.pop_back();
+                    for (int j = 0; j < size(exp5); j++)
+                        text5.setString(text5.getString() + exp5[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text5.setString(text5.getString() + std::to_string(3));
+                exp5.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text5.setString(text5.getString() + std::to_string(4));
+                exp5.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text5.setString(text5.getString() + std::to_string(5));
+                exp5.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text5.setString(text5.getString() + std::to_string(6));
+                exp5.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text5.setString(text5.getString() + std::to_string(7));
+                exp5.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text5.setString(text5.getString() + std::to_string(8));
+                exp5.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text5.setString(text5.getString() + std::to_string(9));
+                exp5.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text5.setString(text5.getString() + std::to_string(0));
+                exp5.push_back(std::to_string(0));
+            }
+        }
+
+        else if (count == 6)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+            {
+                text6.setString(text6.getString() + std::to_string(1));
+                exp6.push_back(std::to_string(1));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if (!exp6.empty())
+                {
+                    text6.setString("");
+                    exp6.pop_back();
+                    for (int j = 0; j < size(exp6); j++)
+                        text6.setString(text6.getString() + exp6[j]);
+                };
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+            {
+                text6.setString(text6.getString() + std::to_string(2));
+                exp6.push_back(std::to_string(2));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+            {
+                text6.setString(text6.getString() + std::to_string(3));
+                exp6.push_back(std::to_string(3));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+            {
+                text6.setString(text6.getString() + std::to_string(4));
+                exp6.push_back(std::to_string(4));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+            {
+                text6.setString(text6.getString() + std::to_string(5));
+                exp6.push_back(std::to_string(5));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+            {
+                text6.setString(text6.getString() + std::to_string(6));
+                exp6.push_back(std::to_string(6));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+            {
+                text6.setString(text6.getString() + std::to_string(7));
+                exp6.push_back(std::to_string(7));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+            {
+                text6.setString(text6.getString() + std::to_string(8));
+                exp6.push_back(std::to_string(8));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+            {
+                text6.setString(text6.getString() + std::to_string(9));
+                exp6.push_back(std::to_string(9));
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+            {
+                text6.setString(text6.getString() + std::to_string(0));
+                exp6.push_back(std::to_string(0));
+            }
+        }
+
+
+        
+        if (count == 0)
+        {
+            text0.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -457,8 +922,6 @@ int interface_cal()
                         if (count < 6) { count++; }
                     }*/
 
-
-
                     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
                     {
                         buttonPressed[i] = true;
@@ -472,11 +935,13 @@ int interface_cal()
                             buttonShapes[i].setFillColor(sf::Color::Green);
 
                             // Обработка значения нажатой кнопки
+
                             if (i == 1 || i == 0 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9)
                             {
                                 text0.setString(text0.getString() + std::to_string(i));
                                 exp0.push_back(std::to_string(i));
                             }
+                            
                             else if (i == 10)
                             {
                                 text0.setString(text0.getString() + "cos(");
@@ -616,7 +1081,7 @@ int interface_cal()
                             {
                                 if (!exp0.empty())
                                 {
-                                    text0.setString(" ");
+                                    text0.setString("");
                                     exp0.pop_back();
                                     for (int j = 0; j < size(exp0); j++)
                                         text0.setString(text0.getString() + exp0[j]);
@@ -641,12 +1106,12 @@ int interface_cal()
 
                             else if (i == 42) 
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);  }
 
                             }
-                            else if (i == 43)
+                            else if (i == 43)             //rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f);
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);  }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -656,10 +1121,13 @@ int interface_cal()
                     }
                 }
             }
+            text0.setFillColor(sf::Color::Black);
         }
 
         if (count == 1)
         {
+            
+            text1.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -683,6 +1151,7 @@ int interface_cal()
                                 text1.setString(text1.getString() + std::to_string(i));
                                 exp1.push_back(std::to_string(i));
                             }
+                           
                             else if (i == 10)
                             {
                                 text1.setString(text1.getString() + "cos(");
@@ -822,7 +1291,7 @@ int interface_cal()
                             {
                                 if (!exp1.empty())
                                 {
-                                    text1.setString(" ");
+                                    text1.setString("");
                                     exp1.pop_back();
                                     for (int j = 0; j < size(exp1); j++)
                                         text1.setString(text1.getString() + exp1[j]);
@@ -847,12 +1316,12 @@ int interface_cal()
 
                             else if (i == 42)
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);  }
 
-                            }
+                            }//  rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f);  
                             else if (i == 43)
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);   }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -863,11 +1332,15 @@ int interface_cal()
                 }
             }
 
-
+            text1.setFillColor(sf::Color::Black);
         }
+
+        
 
         if (count == 2)
         {
+            
+            text2.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -891,6 +1364,7 @@ int interface_cal()
                                 text2.setString(text2.getString() + std::to_string(i));
                                 exp2.push_back(std::to_string(i));
                             }
+                            
                             else if (i == 10)
                             {
                                 text2.setString(text2.getString() + "cos(");
@@ -1030,7 +1504,7 @@ int interface_cal()
                             {
                                 if (!exp2.empty())
                                 {
-                                    text2.setString(" ");
+                                    text2.setString("");
                                     exp2.pop_back();
                                     for (int j = 0; j < size(exp2); j++)
                                         text2.setString(text2.getString() + exp2[j]);
@@ -1055,12 +1529,14 @@ int interface_cal()
 
                             else if (i == 42)
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);
+                                }
 
                             }
-                            else if (i == 43)
+                            else if (i == 43)//  rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f);  
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);
+                                }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -1070,11 +1546,13 @@ int interface_cal()
                     }
                 }
             }
-
+            text2.setFillColor(sf::Color::Black);
         }
 
         if (count == 3)
         {
+            
+            text3.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -1098,6 +1576,7 @@ int interface_cal()
                                 text3.setString(text3.getString() + std::to_string(i));
                                 exp3.push_back(std::to_string(i));
                             }
+                            
                             else if (i == 10)
                             {
                                 text3.setString(text3.getString() + "cos(");
@@ -1237,7 +1716,7 @@ int interface_cal()
                             {
                                 if (!exp3.empty())
                                 {
-                                    text3.setString(" ");
+                                    text3.setString("");
                                     exp3.pop_back();
                                     for (int j = 0; j < size(exp3); j++)
                                         text3.setString(text3.getString() + exp3[j]);
@@ -1260,14 +1739,16 @@ int interface_cal()
                                 ;
                             }
 
-                            else if (i == 42)
+                            else if (i == 42)//  rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f); 
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);
+                                }
 
                             }
                             else if (i == 43)
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);
+                                }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -1277,11 +1758,13 @@ int interface_cal()
                     }
                 }
             }
-
+            text3.setFillColor(sf::Color::Black);
         }
 
         if (count == 4)
         {
+            
+            text4.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -1305,6 +1788,7 @@ int interface_cal()
                                 text4.setString(text4.getString() + std::to_string(i));
                                 exp4.push_back(std::to_string(i));
                             }
+                            
                             else if (i == 10)
                             {
                                 text4.setString(text4.getString() + "cos(");
@@ -1444,7 +1928,7 @@ int interface_cal()
                             {
                                 if (!exp4.empty())
                                 {
-                                    text4.setString(" ");
+                                    text4.setString("");
                                     exp4.pop_back();
                                     for (int j = 0; j < size(exp4); j++)
                                         text4.setString(text4.getString() + exp4[j]);
@@ -1467,14 +1951,16 @@ int interface_cal()
                                 ;
                             }
 
-                            else if (i == 42)
+                            else if (i == 42)//  rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f);
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);
+                                }
 
                             }
                             else if (i == 43)
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);
+                                }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -1484,10 +1970,13 @@ int interface_cal()
                     }
                 }
             }
+            text4.setFillColor(sf::Color::Black);
         }
 
         if (count == 5)
         {
+            
+            text5.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -1511,6 +2000,7 @@ int interface_cal()
                                 text5.setString(text5.getString() + std::to_string(i));
                                 exp5.push_back(std::to_string(i));
                             }
+                            
                             else if (i == 10)
                             {
                                 text5.setString(text5.getString() + "cos(");
@@ -1650,7 +2140,7 @@ int interface_cal()
                             {
                                 if (!exp5.empty())
                                 {
-                                    text5.setString(" ");
+                                    text5.setString("");
                                     exp5.pop_back();
                                     for (int j = 0; j < size(exp5); j++)
                                         text5.setString(text5.getString() + exp5[j]);
@@ -1673,14 +2163,16 @@ int interface_cal()
                                 ;
                             }
 
-                            else if (i == 42)
+                            else if (i == 42)  //  rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f);
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);
+                                }
 
                             }
                             else if (i == 43)
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);
+                                }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -1690,11 +2182,13 @@ int interface_cal()
                     }
                 }
             }
-
+            text5.setFillColor(sf::Color::Black);
         }
 
         if (count == 6)
         {
+            
+            text6.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
@@ -1718,6 +2212,7 @@ int interface_cal()
                                 text6.setString(text6.getString() + std::to_string(i));
                                 exp6.push_back(std::to_string(i));
                             }
+                            
                             else if (i == 10)
                             {
                                 text6.setString(text6.getString() + "cos(");
@@ -1857,7 +2352,7 @@ int interface_cal()
                             {
                                 if (!exp6.empty())
                                 {
-                                    text6.setString(" ");
+                                    text6.setString("");
                                     exp6.pop_back();
                                     for (int j = 0; j < size(exp6); j++)
                                         text6.setString(text6.getString() + exp6[j]);
@@ -1880,14 +2375,16 @@ int interface_cal()
                                 ;
                             }
 
-                            else if (i == 42)
+                            else if (i == 42)//  rectangle.move(-40.f, 0.f); rectangle.move(40.f, 0.f);
                             {
-                                if (count > 0) { count--; std::cout << count; }
+                                if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);
+                                }
 
                             }
                             else if (i == 43)
                             {
-                                if (count < 6) { count++; std::cout << count; }
+                                if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f);
+                                }
                             }
 
                             // Добавить ещё 20 кнопок, написать красиво их расположение, не забыть сделать норм вывод символов на экран 
@@ -1897,16 +2394,15 @@ int interface_cal()
                     }
                 }
             }
+            text6.setFillColor(sf::Color::Black);
         }
-
         window.clear(sf::Color::White);
-
         for (int i = 0; i < 44; i++)
         {
             window.draw(buttonShapes[i]);
             window.draw(buttonTexts[i]);
         }
-
+        window.draw(rectangle);
         window.draw(text0);
         window.draw(text1);
         window.draw(text2);
@@ -1914,10 +2410,6 @@ int interface_cal()
         window.draw(text4);
         window.draw(text5);
         window.draw(text6);
-        
-
         window.display();
     }
-
-
 }
