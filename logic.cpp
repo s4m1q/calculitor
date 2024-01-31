@@ -32,10 +32,10 @@ int main()
 
 
 
-	for (char c : str)
+	/*for (char c : str)
 	{
 		charStack.push(c);
-	}
+	}*/
 
 	
 
