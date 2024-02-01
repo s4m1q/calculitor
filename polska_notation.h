@@ -4,6 +4,9 @@
 #include <string>
 #include <cstring>
 #include <sstream>
+
+#include <stack>
+#include <vector>
 #define SIZE_M 300
 
 
@@ -213,31 +216,31 @@ void post(const char* str_first, char* str_second)
                 push_it('a');
                 per += 3;
             }
-            if (str_first[per] == 'c' && str_first[per + 1] == 'o') {
+            else if (str_first[per] == 'c' && str_first[per + 1] == 'o') {
                 push_it('b');
                 per += 3;
             }
-            if (str_first[per] == 't' && str_first[per + 1] == 'g') {
+            else if (str_first[per] == 't' && str_first[per + 1] == 'g') {
                 push_it('c');
                 per += 2;
             }
-            if (str_first[per] == 'c' && str_first[per + 1] == 't') {
+            else if (str_first[per] == 'c' && str_first[per + 1] == 't') {
                 push_it('d');
                 per += 3;
             }
-            if (str_first[per + 3] == 's' && str_first[per + 4] == 'i') {     // a  r  c  s  i  n
+            else  if (str_first[per + 3] == 's' && str_first[per + 4] == 'i' && str_first[per] == 'a') {     // a  r  c  s  i  n
                 push_it('e');
                 per += 6;
             }
-            if (str_first[per + 3] == 'c' && str_first[per + 4] == 'o') {
+            else    if (str_first[per + 3] == 'c' && str_first[per + 4] == 'o' && str_first[per] == 'a') {
                 push_it('i');
                 per += 6;
             }
-            if (str_first[per + 3] == 't' && str_first[per + 4] == 'g') {
+            else   if (str_first[per + 3] == 't' && str_first[per + 4] == 'g' && str_first[per] == 'a') {
                 push_it('l');
                 per += 5;
             }
-            if (str_first[per + 3] == 'c' && str_first[per + 4] == 'g') {
+            else  if (str_first[per + 3] == 'c' && str_first[per + 4] == 'g' && str_first[per] == 'a') {
                 push_it('m');
                 per += 6;
             }
@@ -271,9 +274,12 @@ void post(const char* str_first, char* str_second)
     }
 }
 
-float notation(char* str_first) // str_first = exp
+float notation(char* str_first)
 {
+    
+
     int len_of_str = strlen(str_first);
+    char opea[SIZE_M] = { 0 };
 
     if (str_first[len_of_str - 1] == '\n')
     {
@@ -281,17 +287,39 @@ float notation(char* str_first) // str_first = exp
         len_of_str--;
     }
 
+
+
     for (int per = 0; per < SIZE_M; per++)
     {
         mass[per] = 0;
     }
 
     post(str_first, str_second);
-    cout << post_counting(str_second); 
-    return post_counting(str_second);
 
     /*cout << "Expression:" << endl;
     cout << str_first << endl;
     cout << "Reverse Polish Notation:" << endl;
     cout << str_second << endl << "Result:" << endl << post_counting(str_second);*/
+
+    return post_counting(str_second);   
 }
+
+char* convert(std::vector <std::string> words)
+{
+    static char str[100] = { 0 };
+    int count = 0;
+
+    
+
+    for (int i = 0; i < words.size(); i++)
+    {
+        for (int j = 0; j < words[i].size(); j++)
+        {
+           
+            str[count++] = (words[i][j]);
+        }
+    }
+
+    return str;
+}
+
