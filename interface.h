@@ -1150,16 +1150,24 @@ int interface_cal()
 
                             else if (i == 41) //enter
                             {
+                                for (int j = 0; j < exp0.size(); j++)
+                                {
+                                    cout << " Q" << exp0[j] << "Q ";
+
+                                }
                                 char * str = convert(exp0);
-                                cout << str;
+                                
                                 float result = notation(str);
+                                text0.setString("");
                                 text0.setString(to_string(result));
                                 std::cout << result;
-                                exp0 = {};
+                                exp0.clear();
+                                
                                 exp0.push_back(to_string(result));
+                                
                             }
 
-                            else if (i == 42) 
+                            else if (i == 42)
                             {
                                 if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f);  }
 

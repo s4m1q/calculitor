@@ -4,7 +4,6 @@
 #include <string>
 #include <cstring>
 #include <sstream>
-
 #include <stack>
 #include <vector>
 #define SIZE_M 300
@@ -276,7 +275,10 @@ void post(const char* str_first, char* str_second)
 
 float notation(char* str_first)
 {
-    
+    for (int k = 0; k < strlen(str_second); k++)
+    {
+        str_second[k] = 0;
+    }
 
     int len_of_str = strlen(str_first);
     char opea[SIZE_M] = { 0 };
@@ -295,7 +297,7 @@ float notation(char* str_first)
     }
 
     post(str_first, str_second);
-
+    //cout << endl<< post_counting(str_second) << endl;
     /*cout << "Expression:" << endl;
     cout << str_first << endl;
     cout << "Reverse Polish Notation:" << endl;
@@ -319,7 +321,6 @@ char* convert(std::vector <std::string> words)
             str[count++] = (words[i][j]);
         }
     }
-
+    cout << " I" << str << "I ";
     return str;
 }
-
