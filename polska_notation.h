@@ -309,9 +309,19 @@ float notation(char* str_first)
 char* convert(std::vector <std::string> words)
 {
     static char str[100] = { 0 };
+
+    for (int k = 0; k < 100; k++)
+    {
+        str[k] = 0;
+    }
+
     int count = 0;
 
-    
+    /*for (int j = 0; j < words.size(); j++)
+    {
+        cout << " ZV" << words[j] << "ZV ";
+
+    }*/
 
     for (int i = 0; i < words.size(); i++)
     {
@@ -321,6 +331,6 @@ char* convert(std::vector <std::string> words)
             str[count++] = (words[i][j]);
         }
     }
-    cout << " I" << str << "I ";
+    //cout << " I" << str << "I ";
     return str;
 }
