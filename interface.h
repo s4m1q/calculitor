@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <vector>
@@ -18,7 +19,7 @@ int interface_cal()
 
     sf::Font font;
 
-
+    
     /*sf::RenderWindow error(sf::VideoMode(600, 400), "Wrong input Data");
     error.setFramerateLimit(13);
 
@@ -1122,11 +1123,18 @@ int interface_cal()
                             {
                                 if (!exp0.empty())
                                 {
+                                    
                                     text0.setString("");
                                     exp0.pop_back();
+                                    
                                     for (int j = 0; j < size(exp0); j++)
+                                    {
                                         text0.setString(text0.getString() + exp0[j]);
+                                        
+                                    }
+                                    
                                 }
+                                
                             }
                             else if (i == 39)
                             {
@@ -1142,10 +1150,13 @@ int interface_cal()
 
                             else if (i == 41) //enter
                             {
-                                char str = convert(exp0);
+                                char * str = convert(exp0);
+                                cout << str;
                                 float result = notation(str);
                                 text0.setString(to_string(result));
+                                std::cout << result;
                                 exp0 = {};
+                                exp0.push_back(to_string(result));
                             }
 
                             else if (i == 42) 

@@ -3,6 +3,7 @@
 #include <cmath>
 #include <string>
 #include <cstring>
+#include <sstream>
 #define SIZE_M 300
 
 
@@ -286,7 +287,7 @@ float notation(char* str_first) // str_first = exp
     }
 
     post(str_first, str_second);
-
+    cout << post_counting(str_second); 
     return post_counting(str_second);
 
     /*cout << "Expression:" << endl;

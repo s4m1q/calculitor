@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <sstream>
 #include <stack>
 #include <vector>
 #include "Header_samir+sani-denisov.h"
