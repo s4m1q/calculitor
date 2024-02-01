@@ -1141,7 +1141,11 @@ int interface_cal()
 
                             else if (i == 41) //enter
                             {
-                                ;
+                                char str = convert(exp0);
+                                float result = notation(str);
+                                text0.setString(sf::to_string(result));
+                                exp0 = {};
+                                
                             }
 
                             else if (i == 42) 
