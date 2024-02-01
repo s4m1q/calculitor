@@ -14,7 +14,13 @@ using namespace std;
 int head = -1;
 float mass[SIZE_M] = { 0 };
 char str_second[SIZE_M] = { 0 };
-
+char exp0[1000] = {0};
+char exp1[1000] = {0};
+char exp2[1000] = {0};
+char exp3[1000] = {0};
+char exp4[1000] = {0};
+char exp5[1000] = {0};
+char exp6[1000] = {0};
 
 
 
