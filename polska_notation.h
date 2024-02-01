@@ -270,21 +270,15 @@ void post(const char* str_first, char* str_second)
     }
 }
 
-int main()
+float notation(char* str_first) // str_first = exp
 {
-    char str_first[SIZE_M] = { 0 };
-    cin >> str_first;
-
     int len_of_str = strlen(str_first);
-    char opea[SIZE_M] = { 0 };
 
     if (str_first[len_of_str - 1] == '\n')
     {
         str_first[len_of_str - 1] = 0;
         len_of_str--;
     }
-
-
 
     for (int per = 0; per < SIZE_M; per++)
     {
@@ -293,10 +287,10 @@ int main()
 
     post(str_first, str_second);
 
+    return post_counting(str_second);
 
-
-    cout << "Expression:" << endl;
+    /*cout << "Expression:" << endl;
     cout << str_first << endl;
     cout << "Reverse Polish Notation:" << endl;
-    cout << str_second << endl << "Result:" << endl << post_counting(str_second);
+    cout << str_second << endl << "Result:" << endl << post_counting(str_second);*/
 }
