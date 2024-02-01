@@ -4,9 +4,9 @@
 #include <stack>
 #include <vector>
 #include "Header_samir+sani-denisov.h"
-#include "interface.h"
 #include "Header_alina+sani-fedoriko.h"
 #include "Count.h"
+#include "interface.h"
 #define Max_size 1000
 
 using namespace std;
@@ -25,12 +25,9 @@ int main()
 
 
 	
-	string str = {};
-	getline(cin, str);
-
-	std::stack<char> charStack;
 
 
+	
 
 	/*for (char c : str)
 	{

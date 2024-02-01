@@ -29,6 +29,12 @@
     <ClInclude Include="Header_samir+sani-denisov.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Count.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Errors_k.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="arial.ttf" />

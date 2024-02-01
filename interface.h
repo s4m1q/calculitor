@@ -5,6 +5,9 @@
 #include <conio.h> 
 #include <windows.h> 
 
+
+
+
 int interface_cal()
 {
     setlocale(LC_ALL, "RU");
@@ -48,9 +51,15 @@ int interface_cal()
     }*/
     
 
-   
-
     
+
+    std::vector<std::string> exp0{  };
+    std::vector<std::string> exp1{  };
+    std::vector<std::string> exp2{  };
+    std::vector<std::string> exp3{  };
+    std::vector<std::string> exp4{  };
+    std::vector<std::string> exp5{  };
+    std::vector<std::string> exp6{  };
 
 
 
@@ -60,13 +69,7 @@ int interface_cal()
     windows.display();*/
 
 
-    std::vector<std::string> exp0{  };
-    std::vector<std::string> exp1{  };
-    std::vector<std::string> exp2{  };
-    std::vector<std::string> exp3{  };
-    std::vector<std::string> exp4{  };
-    std::vector<std::string> exp5{  };
-    std::vector<std::string> exp6{  };
+    
  
 
 
