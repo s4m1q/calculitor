@@ -14,9 +14,47 @@ int interface_cal()
 
     sf::Font font;
 
-   //char exp0[100][8] = {0};
 
-    //int top_left = 0;
+    /*sf::RenderWindow error(sf::VideoMode(600, 400), "Wrong input Data");
+    error.setFramerateLimit(13);
+
+
+    if (!font.loadFromFile("arial.ttf"))
+    {
+        std::cout << "Failed to load font!" << std::endl;
+        return -1;
+    }
+    sf::Text _error_("", font, 40);
+    _error_.setFillColor(sf::Color::Red);
+    _error_.setPosition(10.f, 160.f);
+
+    while (error.isOpen())
+    {
+        sf::Event event;
+
+        while (error.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                error.close();
+            }
+        }
+        
+        _error_.setString("ERROR, CHANGE INPUT DATA");
+        error.clear(sf::Color::Black);
+       
+        error.draw(_error_);
+        error.display();
+    }*/
+    
+
+   
+
+    
+
+
+
+ 
 
     /*sf::RenderWindow windows(sf::VideoMode(1000, 900), "test");
     windows.display();*/
@@ -30,7 +68,6 @@ int interface_cal()
     std::vector<std::string> exp5{  };
     std::vector<std::string> exp6{  };
  
-
 
 
     if (!font.loadFromFile("arial.ttf"))
