@@ -4,8 +4,7 @@
 #include <vector>
 #include <conio.h> 
 #include <windows.h> 
-
-
+#include "polska_notation.h"
 
 
 int interface_cal()
@@ -1141,7 +1140,10 @@ int interface_cal()
 
                             else if (i == 41) //enter
                             {
-                                ;
+                                char str = convert(exp0);
+                                float result = notation(str);
+                                text0.setString(to_string(result));
+                                exp0 = {};
                             }
 
                             else if (i == 42) 
@@ -2387,6 +2389,7 @@ int interface_cal()
                             else if (i == 37) {
                                 text6.setString(text6.getString() + "=");      // 34f( 35g( 36h( 37= 38BkSp 39ln( 40log_
                                 exp6.push_back("=");
+                                
                             }
                             else if (i == 38)//backspace
                             {

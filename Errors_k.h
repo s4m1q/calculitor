@@ -5,17 +5,21 @@
 #include <conio.h> 
 #include <windows.h> 
 
-
 void call_error()
 {
     sf::RenderWindow error(sf::VideoMode(600, 400), "Wrong input Data");
     error.setFramerateLimit(13);
     sf::Font font;
 
-    
+    if (!font.loadFromFile("arial.ttf"))
+    {
+        std::cout << "Failed to load font!" << std::endl;
+        
+    }
+
     sf::Text _error_("", font, 40);
     _error_.setFillColor(sf::Color::Red);
-    _error_.setPosition(10.f, 160.f);
+    _error_.setPosition(10.f, 150.f);
 
     while (error.isOpen())
     {

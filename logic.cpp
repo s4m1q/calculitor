@@ -7,6 +7,7 @@
 #include "Header_alina+sani-fedoriko.h"
 #include "Count.h"
 #include "interface.h"
+#include "Errors_k.h"
 #define Max_size 1000
 
 using namespace std;
@@ -25,7 +26,7 @@ int main()
 
 
 	
-
+	//call_error();
 
 	
 
@@ -37,15 +38,15 @@ int main()
 	
 
 	//int type = interface_cal();
-	
+	//call_error();
 		
 
 	/*string operation = {};
 	float a = 0, b = 0;
-	cin >> operation;
-	cin >> a >> b;
-	Calculate c(operation, a, b); // это вспомогательный калькулятор для обычных чисел. нужен такой же для мнимых (Саня Ф - это ты делаешь с классом итд)
-	double s = c.result();		// функции должны к нему обращаться для подсчёта, работает только с рациональными числами.
+	//cin >> operation;
+	//cin >> a >> b;
+	//Calculate c(operation, a, b); // это вспомогательный калькулятор для обычных чисел. нужен такой же для мнимых (Саня Ф - это ты делаешь с классом итд)
+	//double s = c.result();		// функции должны к нему обращаться для подсчёта, работает только с рациональными числами.
 	cout << s;
 	*/
 }
