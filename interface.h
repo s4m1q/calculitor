@@ -63,7 +63,8 @@ int interface_cal()
     std::vector<std::string> exp5{  };
     std::vector<std::string> exp6{  };
 
-
+    // f(x
+    // g(x
 
  
 
@@ -95,43 +96,51 @@ int interface_cal()
 
     sf::Text text1("", font, 30);
     text1.setFillColor(sf::Color::Black);
-    text1.setPosition(20.f, 60.f);
+    text1.setPosition(100.f, 60.f);
 
     sf::Text text2("", font, 30);
     text2.setFillColor(sf::Color::Black);
-    text2.setPosition(20.f, 100.f);            // f(x) = x^2
+    text2.setPosition(100.f, 100.f);            // f(x) = x^2
                                               // x = 2       
 
     sf::Text text3("", font, 30);
     text3.setFillColor(sf::Color::Black);
-    text3.setPosition(20.f, 140.f);
+    text3.setPosition(100.f, 140.f);
 
 
     sf::Text text4("", font, 30);
     text4.setFillColor(sf::Color::Black);
-    text4.setPosition(20.f, 180.f);
+    text4.setPosition(100, 180.f);
 
     sf::Text text5("", font, 30);
     text5.setFillColor(sf::Color::Black);
-    text5.setPosition(20.f, 220.f);
+    text5.setPosition(100.f, 220.f);
     
     sf::Text text6("", font, 30);
     text6.setFillColor(sf::Color::Black);
-    text6.setPosition(20.f, 260.f);
+    text6.setPosition(100, 260.f);
 
 
     int count = 0;
  
 
-    sf::RectangleShape buttonShapes[44];
-    sf::Text buttonTexts[44];
-    bool buttonPressed[44] = { false };
+    sf::RectangleShape buttonShapes[50];
+    sf::Text buttonTexts[50];
+    bool buttonPressed[50] = { false };
 
-    for (int i = 0; i < 44; i++)
+    for (int i = 0; i < 50; i++)
     {
         if (i == 1 || i == 0 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9)
         {
             buttonShapes[i].setSize(sf::Vector2f(70.f, 65.f));
+        }
+        else if (i == 44 || i == 46 || i == 48)
+        {
+            buttonShapes[i].setSize(sf::Vector2f(90.f, 40.f));
+        }
+        else if (i == 45 || i == 47 || i == 49)
+        {
+            buttonShapes[i].setSize(sf::Vector2f(90.f, 40.f));
         }
         else if (i == 22 || i == 23 || i == 24 || i == 25 || i == 26 || i == 27 || i == 18 || i == 21 || i == 19 || i == 20 || i == 28 || i == 29 ||   i == 31 || i == 32 || i == 33)
         {
@@ -375,14 +384,62 @@ int interface_cal()
             x_k = 1350;
         }
 
-        buttonShapes[i].setPosition(x_k, y_k - 150.f);
-        buttonShapes[i].setFillColor(sf::Color::Green);
+        else if (i == 44)
+        {
+            y_k = 60;
+            x_k = 0;
+        }
+        else if (i == 45)
+        {
+            y_k = 100;
+            x_k = 0;
+        }
+        else if (i == 46)
+        {
+            y_k = 140;
+            x_k = 0;
+        }
+        else if (i == 47)
+        {
+            y_k = 180;
+            x_k = 0;
+        }
+        else if (i == 48)
+        {
+            y_k = 220;
+            x_k = 0;
+        }
+        else if (i == 49)
+        {
+            y_k = 260;
+            x_k = 0;
+        }
+        if (i == 44 || i == 45 || i == 46 || i == 47 || i == 48 || i == 49)
+        {
+            buttonShapes[i].setPosition(x_k, y_k);
+        }
+        else 
+        { 
+            buttonShapes[i].setPosition(x_k, y_k - 150.f); 
+        }
+
+        if (i == 44 || i == 45 || i == 46 || i == 47 || i == 48 || i == 49)
+        {
+            buttonShapes[i].setFillColor(sf::Color::Blue);
+        }
+        else { buttonShapes[i].setFillColor(sf::Color::Black); }
+
+
         if (i == 38) // íàäî âñ¸ ðàçóêðàñèòü
         {
             buttonShapes[i].setFillColor(sf::Color::Black);
         }
         buttonTexts[i].setFont(font);
-        buttonTexts[i].setCharacterSize(40);
+        if (i == 44 || i == 45 || i == 46 || i == 47 || i == 48 || i == 49)
+        {
+            buttonTexts[i].setCharacterSize(33);
+        }
+        else { buttonTexts[i].setCharacterSize(40); }
         buttonTexts[i].setFillColor(sf::Color::White);
         buttonTexts[i].setPosition(buttonShapes[i].getPosition() + sf::Vector2f(10.f, 0.f));
         
@@ -440,7 +497,7 @@ int interface_cal()
         else if (i == 25)
             buttonTexts[i].setString("  i");
         else if (i == 26)
-            buttonTexts[i].setString("pi");
+            buttonTexts[i].setString(" pi");
         else if (i == 27)
             buttonTexts[i].setString(" e");// !29 òî÷êà28 sqrt30 x31 y32 z33
         else if (i == 28)
@@ -475,8 +532,25 @@ int interface_cal()
             buttonTexts[i].setString("  Up");
         else if (i == 43)
             buttonTexts[i].setString("Down");
-        
+        else if (i == 44)
+            buttonTexts[i].setString("f(x)=");
+        else if (i == 45)
+            buttonTexts[i].setString("X =");
+        else if (i == 46)
+            buttonTexts[i].setString("g(y)=");
+        else if (i == 47)
+            buttonTexts[i].setString("Y =");
+        else if (i == 48)
+            buttonTexts[i].setString("h(z)=");
+        else if (i == 49)
+            buttonTexts[i].setString("Z =");
     }
+    /*text1.setString("f(x)=");
+    text2.setString("x=");
+    text3.setString("g(y)=");
+    text4.setString("y=");
+    text5.setString("h(z)=");
+    text6.setString("z=");*/
 
     while (window.isOpen())
     {
@@ -490,6 +564,12 @@ int interface_cal()
             }
         }
 
+        /*text1.setString("f(x)=" + text1.getString());
+        text2.setString("x=" + text2.getString());
+        text3.setString("g(y)=" + text3.getString());
+        text4.setString("y=" + text4.getString());
+        text5.setString("h(z)=" + text5.getString());
+        text6.setString("z=" + text6.getString());*/
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { if (count > 0) { count--; std::cout << count; rectangle.move(0.f, -40.f); } }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { if (count < 6) { count++; std::cout << count; rectangle.move(0.f, 40.f); } }
@@ -498,6 +578,7 @@ int interface_cal()
 
         if (count == 0)
         {
+            
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
             {
                 text0.setString(text0.getString() + std::to_string(1));
@@ -952,6 +1033,7 @@ int interface_cal()
             text0.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
+                buttonShapes[i].setFillColor(sf::Color::Black);
                 if (buttonShapes[i].getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
                 {
                     /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -1180,13 +1262,14 @@ int interface_cal()
                         }
                     }
                 }
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
+
             text0.setFillColor(sf::Color::Black);
         }
 
         if (count == 1)
         {
-            
             text1.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
@@ -1211,7 +1294,7 @@ int interface_cal()
                                 text1.setString(text1.getString() + std::to_string(i));
                                 exp1.push_back(std::to_string(i));
                             }
-                           
+                            
                             else if (i == 10)
                             {
                                 text1.setString(text1.getString() + "cos(");
@@ -1390,6 +1473,7 @@ int interface_cal()
                         }
                     }
                 }
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
 
             text1.setFillColor(sf::Color::Black);
@@ -1605,6 +1689,7 @@ int interface_cal()
                         }
                     }
                 }
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
             text2.setFillColor(sf::Color::Black);
         }
@@ -1817,6 +1902,7 @@ int interface_cal()
                         }
                     }
                 }
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
             text3.setFillColor(sf::Color::Black);
         }
@@ -2029,13 +2115,14 @@ int interface_cal()
                         }
                     }
                 }
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
             text4.setFillColor(sf::Color::Black);
         }
 
         if (count == 5)
         {
-            
+           
             text5.setFillColor(sf::Color::Black);
             for (int i = 0; i < 44; i++)
             {
@@ -2241,6 +2328,7 @@ int interface_cal()
                         }
                     }
                 }
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
             text5.setFillColor(sf::Color::Black);
         }
@@ -2454,6 +2542,8 @@ int interface_cal()
                         }
                     }
                 }
+                
+                buttonShapes[i].setFillColor(sf::Color::Black);
             }
             text6.setFillColor(sf::Color::Black);
         }
@@ -2471,6 +2561,11 @@ int interface_cal()
         window.draw(text4);
         window.draw(text5);
         window.draw(text6);
+        for (int i = 44; i < 50; i++)
+        {
+            window.draw(buttonShapes[i]);
+            window.draw(buttonTexts[i]);
+        }
         window.display();
     }
     
